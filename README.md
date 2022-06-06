@@ -3,8 +3,10 @@
 # Suco De Frutas
 <h2>Sistema em Bussiness Intelligence - BI: Empresa de Bebidas<h2/>
                                                                   
-- Índice;
+  <h3>Índice;</h3>
+  
 - Descrição do Projeto;
+  > Projeto de BI fictício, empresa suco de frutas, a qual produz e fornece seus produtos.
 - Status do Projeto;
 - Funcionalidades e Demonstração da Aplicação;
 - Acesso ao Projeto;
