@@ -12,5 +12,7 @@
 - Acesso ao Projeto;
 - Tecnologias utilizadas;
 - Pessoas Contribuidoras;
+  >Rogério Andrade
 - Pessoas Desenvolvedoras do Projeto;
+  >Rogério Andrade
 - Licença
