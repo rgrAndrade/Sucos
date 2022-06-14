@@ -14,8 +14,9 @@
   <p> 1. Microsoft SQL Server 2019</p>
   <p> 2. Microsoft SQL Server  Management Studio v18.11.1</p>
   <p> 3.  Microsoft Integration Services</p>
-  <p> 4. Visual Studio 2019 </p>
-  <p> 5.  Power BI Desktop</p
+  <p> 4.  Microsoft SQL Data Tools</p>
+  <p> 5. Visual Studio 2019 </p>
+  <p> 6.  Power BI Desktop</p
 - Pessoas Contribuidoras;
   >Rogério Andrade
 - Pessoas Desenvolvedoras do Projeto;
