@@ -11,6 +11,10 @@
 - Funcionalidades e Demonstração da Aplicação;
 - Acesso ao Projeto;
 - Tecnologias utilizadas;
+  > Microsoft SQL Server 2019;
+  > Microsoft SQL Server  Management Studio v18.11.1;
+  > Visual Studio 2019 e 
+  > Power BI Desktop
 - Pessoas Contribuidoras;
   >Rogério Andrade
 - Pessoas Desenvolvedoras do Projeto;
