@@ -66,6 +66,12 @@
     <Build Include="tabelas\Dim_Marca.sql" />
     <Build Include="tabelas\Dim_Produto.sql" />
     <Build Include="tabelas\Dim_Organizacional.sql" />
+    <Build Include="tabelas\Dim_Tempo.sql" />
+    <Build Include="tabelas\Fato_001.sql" />
+    <Build Include="tabelas\Fato_002.sql" />
+    <Build Include="tabelas\Fato_003.sql" />
+    <Build Include="tabelas\Fato_004.sql" />
+    <Build Include="tabelas\Fato_005.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DataWarehouseSucos.refactorlog" />
