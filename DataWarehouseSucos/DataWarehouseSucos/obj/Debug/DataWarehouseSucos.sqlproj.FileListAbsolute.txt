@@ -1,0 +1,5 @@
+C:\Users\rgrso\Documents\Sucos\DataWarehouseSucos\DataWarehouseSucos\bin\Debug\DataWarehouseSucos.dacpac
+C:\Users\rgrso\Documents\Sucos\DataWarehouseSucos\DataWarehouseSucos\bin\Debug\DataWarehouseSucos.dll
+C:\Users\rgrso\Documents\Sucos\DataWarehouseSucos\DataWarehouseSucos\bin\Debug\DataWarehouseSucos.pdb
+C:\Users\rgrso\Documents\Sucos\DataWarehouseSucos\DataWarehouseSucos\obj\Debug\DataWarehouseSucos.dll
+C:\Users\rgrso\Documents\Sucos\DataWarehouseSucos\DataWarehouseSucos\obj\Debug\DataWarehouseSucos.pdb
