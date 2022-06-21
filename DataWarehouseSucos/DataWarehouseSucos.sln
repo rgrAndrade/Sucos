@@ -5,18 +5,30 @@ VisualStudioVersion = 16.0.32428.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DataWarehouseSucos", "DataWarehouseSucos\DataWarehouseSucos.sqlproj", "{728237F8-D933-41A4-8129-1FAD2CF928EB}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CargaDatawarehouse", "CargaDatawarehouse\CargaDatawarehouse.dtproj", "{50AFF67F-B922-4A3A-B0F5-42E3F9F6B488}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{728237F8-D933-41A4-8129-1FAD2CF928EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{728237F8-D933-41A4-8129-1FAD2CF928EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{728237F8-D933-41A4-8129-1FAD2CF928EB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{728237F8-D933-41A4-8129-1FAD2CF928EB}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{728237F8-D933-41A4-8129-1FAD2CF928EB}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{728237F8-D933-41A4-8129-1FAD2CF928EB}.Development|Any CPU.Deploy.0 = Debug|Any CPU
 		{728237F8-D933-41A4-8129-1FAD2CF928EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{728237F8-D933-41A4-8129-1FAD2CF928EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{728237F8-D933-41A4-8129-1FAD2CF928EB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{50AFF67F-B922-4A3A-B0F5-42E3F9F6B488}.Debug|Any CPU.ActiveCfg = Development
+		{50AFF67F-B922-4A3A-B0F5-42E3F9F6B488}.Debug|Any CPU.Build.0 = Development
+		{50AFF67F-B922-4A3A-B0F5-42E3F9F6B488}.Development|Any CPU.ActiveCfg = Development
+		{50AFF67F-B922-4A3A-B0F5-42E3F9F6B488}.Development|Any CPU.Build.0 = Development
+		{50AFF67F-B922-4A3A-B0F5-42E3F9F6B488}.Release|Any CPU.ActiveCfg = Development
+		{50AFF67F-B922-4A3A-B0F5-42E3F9F6B488}.Release|Any CPU.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
