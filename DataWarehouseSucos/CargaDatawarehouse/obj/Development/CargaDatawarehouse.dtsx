@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/27/2022 7:12:45 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-JH59P0B"
+  DTS:CreatorName="DESKTOP-JH59P0B\rgrso"
+  DTS:DTSID="{B492858A-C0A1-40FF-A7A9-C6F0989F89E8}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{30C97533-4966-44BD-B61A-32D4D88DD5B6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{06EA14AD-F199-4904-AAE8-7117165FB826}"
+      DTS:ObjectName="Ano_Final">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">2014</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{B7FBE71D-4DD1-4FC6-A16F-D2B06AAF7315}"
+      DTS:ObjectName="Ano_Inicial">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">2014</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{07EB3319-773C-4882-9C49-FD0093E80D6D}"
+      DTS:ObjectName="Mes_Final">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">12</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{7CD5F28F-56A5-4229-A2D9-E944B85223A0}"
+      DTS:ObjectName="Mes_Inicial">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">1</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CargaDimensoes"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="CargaDimensoes"
+      DTS:DTSID="{7EA34011-9442-4402-9A58-B825874D6514}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CargaDimensoes"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>CargaDimensoes.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>Ano_Final</ParameterName>
+            <BindedVariableOrParameterName>$Package::Ano_Final</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Ano_Inicial</ParameterName>
+            <BindedVariableOrParameterName>$Package::Ano_Final</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Mes_Final</ParameterName>
+            <BindedVariableOrParameterName>$Package::Mes_Final</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Mes_Inicial</ParameterName>
+            <BindedVariableOrParameterName>$Package::Mes_Inicial</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CargaFatos"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="CargaFatos"
+      DTS:DTSID="{6BBA4BDB-172A-4B11-A459-D9710B1D09F3}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CargaFatos"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>CargaFatos.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>Ano_Final</ParameterName>
+            <BindedVariableOrParameterName>$Package::Ano_Final</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Ano_Inicial</ParameterName>
+            <BindedVariableOrParameterName>$Package::Ano_Inicial</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Mes_Final</ParameterName>
+            <BindedVariableOrParameterName>$Package::Mes_Final</BindedVariableOrParameterName>
+          </ParameterAssignment>
+          <ParameterAssignment>
+            <ParameterName>Mes_Inicial</ParameterName>
+            <BindedVariableOrParameterName>$Package::Mes_Inicial</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restrição]"
+      DTS:CreationName=""
+      DTS:DTSID="{CE43F328-95E3-49F3-A463-A4BB29EB7320}"
+      DTS:From="Package\CargaDimensoes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restrição"
+      DTS:To="Package\CargaFatos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\CargaDimensoes"
+          TopLeft="15,20" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\CargaFatos"
+          TopLeft="48.5,111.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restrição]"
+          TopLeft="111.75,62">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.5"
+              Start="0,0"
+              End="0,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

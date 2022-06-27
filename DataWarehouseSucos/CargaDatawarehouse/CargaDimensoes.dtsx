@@ -11,8 +11,8 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{4FA70211-37D1-4C44-803F-14A4789FCC68}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{CE2735E3-6FC4-458E-B858-CA3B5CD2D807}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -221,13 +221,50 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{700A6262-3359-4A04-80D2-CB67B6DEC62B}"
+      DTS:ObjectName="Ano_Final">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">2014</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{051BC213-39A2-4084-9C7F-5322FA06AF30}"
+      DTS:ObjectName="Ano_Inicial">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">2014</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{E8B0ED7D-02AC-40C0-9DA7-FE7276B48E86}"
+      DTS:ObjectName="Mes_Final">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">12</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{44785DDF-87AD-4604-99ED-25EE0DB91291}"
+      DTS:ObjectName="Mes_Inicial">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">1</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Criação da Dimenssão Organizacional Tab II Nível II"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{A5FB4D5A-E997-461C-AD09-9C206D999720}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1273,7 +1310,6 @@
       DTS:refId="Package\Criação Da Dimensão Cliente"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{41318457-3BFC-4CB7-8532-7FFF52AC3FF4}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4028,7 +4064,6 @@
       DTS:refId="Package\Criação Da Dimensão Fábrica"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{44A3CD5F-8CAC-49D0-8634-2369295E4887}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4832,7 +4867,6 @@ SELECT'002' AS CODIGO, 'Fáb. São Paulo' AS DESCRITOR</property>
       DTS:refId="Package\Criação da Dimensão Organizacional Tab I Nível I"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{2EF1EF1B-B7DC-4C4F-9EE8-6A73CD339E36}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -5754,7 +5788,6 @@ SELECT'002' AS CODIGO, 'Fáb. São Paulo' AS DESCRITOR</property>
       DTS:refId="Package\Criação da Dimensão Organizacional Tab I Nível II"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{50FEB9CA-604C-4AA6-8458-62CBD8EEFDE5}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -6809,7 +6842,6 @@ SELECT'002' AS CODIGO, 'Fáb. São Paulo' AS DESCRITOR</property>
       DTS:refId="Package\Criação da Dimensão Organizacional Tab I Nível III"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{DBE3CE10-0D5B-4C08-BBE1-630FAF2B3B7C}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -7911,7 +7943,6 @@ SELECT'002' AS CODIGO, 'Fáb. São Paulo' AS DESCRITOR</property>
       DTS:refId="Package\Criação da Dimensão Organizacional Tab II Nível I"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{DACC1824-AB69-4E01-9C67-8D69CD79F2A3}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -8824,7 +8855,6 @@ SELECT'002' AS CODIGO, 'Fáb. São Paulo' AS DESCRITOR</property>
       DTS:refId="Package\Criação da Dimensão Produto - Nível Categoria"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{06D3087F-F2EC-4113-AAF2-BAB074E31F8F}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -9776,7 +9806,6 @@ SELECT'002' AS CODIGO, 'Fáb. São Paulo' AS DESCRITOR</property>
       DTS:refId="Package\Criação da Dimensão Produto - Nível Marca"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{890a1d48-8eff-4c55-aaf1-de3e28787245}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -10735,7 +10764,6 @@ SELECT'002' AS CODIGO, 'Fáb. São Paulo' AS DESCRITOR</property>
       DTS:refId="Package\Criação da Dimensão Produto - Nível Produto"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{7F7292B1-7F99-4E40-A17C-4DF5E87F834E}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -13291,10 +13319,10 @@ DECLARE @DIMDATE TABLE
 		[Tipo_Dia] NVARCHAR(50) -- Dia Útil ou Fim de Semana
 	)
 
-DECLARE @AnoInicial VARCHAR(4) = '2013'
-DECLARE @MesInicial VARCHAR(2) = '1'
-DECLARE @AnoFinal VARCHAR(4) = '2013'
-DECLARE @MesFinal VARCHAR(2) = '6'
+DECLARE @AnoInicial VARCHAR(4) = ?
+DECLARE @MesInicial VARCHAR(2) = ?
+DECLARE @AnoFinal VARCHAR(4) = ?
+DECLARE @MesFinal VARCHAR(2) =?
 
 DECLARE @StartDate DATETIME
 Select @StartDate = CAST(@AnoInicial + '/' + @MesInicial + '/01' AS DATETIME)
@@ -13514,7 +13542,7 @@ SELECT * FROM @DIMDATE order by Cod_Dia</property>
                 <property
                   dataType="System.String"
                   description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
-                  name="ParameterMapping"></property>
+                  name="ParameterMapping">"Parâmetro0:Input",{051BC213-C65D-4084-9C7F-5322FA06AF30};"Parâmetro1:Input",{44785DDF-7852-4604-99ED-25EE0DB91291};"Parâmetro2:Input",{700A6262-CCA6-4A04-80D2-CB67B6DEC62B};"Parâmetro3:Input",{E8B0ED7D-FD53-40C0-9DA7-FE7276B48E86};</property>
               </properties>
               <connections>
                 <connection
@@ -14239,7 +14267,6 @@ SELECT * FROM @DIMDATE order by Cod_Dia</property>
       DTS:refId="Package\Execução da Rotina Esquer , Direita e Nível"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tarefa Executar SQL"
-      DTS:Disabled="True"
       DTS:DTSID="{BE7F4452-4A78-4539-BEEF-BBE4FF74FF57}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -14257,7 +14284,6 @@ SELECT * FROM @DIMDATE order by Cod_Dia</property>
       DTS:refId="Package\Transferência do Esquerda, Direita e Nível"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{1A155B83-C47E-4EEA-93DA-D29BDB157C0B}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
