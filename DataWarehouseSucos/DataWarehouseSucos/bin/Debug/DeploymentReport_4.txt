@@ -10,7 +10,7 @@
 
 ** User actions
      Create
-       [dbo].[Dim_Organizacional] (Table)
-       [dbo].[FK_Dim_Organizacional_Dim_organizacional] (Foreign Key)
+       [dbo].[Dim_Tempo] (Table)
+       [dbo].[Table1] (Table)
 
 ** Supporting actions

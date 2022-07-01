@@ -40,42 +40,7 @@ USE [$(DatabaseName)];
 
 
 GO
-PRINT N'Rename refactoring operation with key 312519b5-d755-491c-82b8-76d9bcf0a3f8 is skipped, element [dbo].[Fato_001].[Id] (SqlSimpleColumn) will not be renamed to Cod_Cliente';
-
-
-GO
-PRINT N'Rename refactoring operation with key e2d7d7df-489c-4536-a222-90156f5ac10d is skipped, element [dbo].[Fato_002].[Faturamento] (SqlSimpleColumn) will not be renamed to Frete';
-
-
-GO
-PRINT N'Rename refactoring operation with key 3d965a02-f8d3-4ce7-8a6b-ab05e7c9b859 is skipped, element [dbo].[Fato_003].[Custo_Variavel] (SqlSimpleColumn) will not be renamed to Custo_Fixo';
-
-
-GO
-PRINT N'Rename refactoring operation with key a05a6b8c-df49-4ac8-b522-8d76e96db7fb is skipped, element [dbo].[Fato_004].[Faturamento] (SqlSimpleColumn) will not be renamed to Meta_Faturamento';
-
-
-GO
-PRINT N'Creating Table [dbo].[Fato_001]...';
-
-
-GO
-CREATE TABLE [dbo].[Fato_001] (
-    [Cod_Cliente]        NVARCHAR (50) NOT NULL,
-    [Cod_Produto]        NVARCHAR (50) NOT NULL,
-    [Cod_Organizacional] NVARCHAR (50) NOT NULL,
-    [Cod_Fabrica]        NVARCHAR (50) NOT NULL,
-    [Cod_Dia]            NVARCHAR (50) NOT NULL,
-    [Faturamento]        FLOAT (53)    NULL,
-    [Custo_Variavel]     FLOAT (53)    NULL,
-    [Quantidade_Vendida] FLOAT (53)    NULL,
-    [Unidade_Vendida]    FLOAT (53)    NULL,
-    PRIMARY KEY CLUSTERED ([Cod_Fabrica] ASC, [Cod_Dia] ASC, [Cod_Organizacional] ASC, [Cod_Produto] ASC, [Cod_Cliente] ASC)
-);
-
-
-GO
-PRINT N'Creating Table [dbo].[Fato_002]...';
+PRINT N'Creating [dbo].[Fato_002]...';
 
 
 GO
@@ -85,12 +50,12 @@ CREATE TABLE [dbo].[Fato_002] (
     [Cod_Fabrica] NVARCHAR (50) NOT NULL,
     [Cod_Dia]     NVARCHAR (50) NOT NULL,
     [Frete]       FLOAT (53)    NULL,
-    PRIMARY KEY CLUSTERED ([Cod_Fabrica] ASC, [Cod_Dia] ASC, [Cod_Produto] ASC, [Cod_Cliente] ASC)
+    PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC, [Cod_Produto] ASC, [Cod_Fabrica] ASC, [Cod_Dia] ASC)
 );
 
 
 GO
-PRINT N'Creating Table [dbo].[Fato_003]...';
+PRINT N'Creating [dbo].[Fato_003]...';
 
 
 GO
@@ -103,7 +68,7 @@ CREATE TABLE [dbo].[Fato_003] (
 
 
 GO
-PRINT N'Creating Table [dbo].[Fato_004]...';
+PRINT N'Creating [dbo].[Fato_004]...';
 
 
 GO
@@ -113,12 +78,12 @@ CREATE TABLE [dbo].[Fato_004] (
     [Cod_Organizacional] NVARCHAR (50) NOT NULL,
     [Cod_Dia]            NVARCHAR (50) NOT NULL,
     [Meta_Faturamento]   FLOAT (53)    NULL,
-    PRIMARY KEY CLUSTERED ([Cod_Dia] ASC, [Cod_Organizacional] ASC, [Cod_Produto] ASC, [Cod_Cliente] ASC)
+    PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC, [Cod_Produto] ASC, [Cod_Organizacional] ASC, [Cod_Dia] ASC)
 );
 
 
 GO
-PRINT N'Creating Table [dbo].[Fato_005]...';
+PRINT N'Creating [dbo].[Fato_005]...';
 
 
 GO
@@ -127,57 +92,12 @@ CREATE TABLE [dbo].[Fato_005] (
     [Cod_Fabrica] NVARCHAR (50) NOT NULL,
     [Cod_Dia]     NVARCHAR (50) NOT NULL,
     [Meta_Custo]  FLOAT (53)    NULL,
-    PRIMARY KEY CLUSTERED ([Cod_Fabrica] ASC, [Cod_Dia] ASC, [Cod_Produto] ASC)
+    PRIMARY KEY CLUSTERED ([Cod_Produto] ASC, [Cod_Fabrica] ASC, [Cod_Dia] ASC)
 );
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_001_Dim_Cliente]...';
-
-
-GO
-ALTER TABLE [dbo].[Fato_001] WITH NOCHECK
-    ADD CONSTRAINT [FK_Fato_001_Dim_Cliente] FOREIGN KEY ([Cod_Cliente]) REFERENCES [dbo].[Dim_Cliente] ([Cod_Cliente]);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_001_Dim_Produto]...';
-
-
-GO
-ALTER TABLE [dbo].[Fato_001] WITH NOCHECK
-    ADD CONSTRAINT [FK_Fato_001_Dim_Produto] FOREIGN KEY ([Cod_Produto]) REFERENCES [dbo].[Dim_Produto] ([Cod_Produto]);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_001_Dim_Organizacional]...';
-
-
-GO
-ALTER TABLE [dbo].[Fato_001] WITH NOCHECK
-    ADD CONSTRAINT [FK_Fato_001_Dim_Organizacional] FOREIGN KEY ([Cod_Organizacional]) REFERENCES [dbo].[Dim_Organizacional] ([Cod_Filho]);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_001_Dim_Fabrica]...';
-
-
-GO
-ALTER TABLE [dbo].[Fato_001] WITH NOCHECK
-    ADD CONSTRAINT [FK_Fato_001_Dim_Fabrica] FOREIGN KEY ([Cod_Fabrica]) REFERENCES [dbo].[Dim_Fabrica] ([Cod_Fabrica]);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_001_Dim_Tempo]...';
-
-
-GO
-ALTER TABLE [dbo].[Fato_001] WITH NOCHECK
-    ADD CONSTRAINT [FK_Fato_001_Dim_Tempo] FOREIGN KEY ([Cod_Dia]) REFERENCES [dbo].[Dim_Tempo] ([Cod_Dia]);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_002_Dim_Cliente]...';
+PRINT N'Creating [dbo].[FK_Fato_002_Dim_Cliente]...';
 
 
 GO
@@ -186,7 +106,7 @@ ALTER TABLE [dbo].[Fato_002] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_002_Dim_Produto]...';
+PRINT N'Creating [dbo].[FK_Fato_002_Dim_Produto]...';
 
 
 GO
@@ -195,7 +115,7 @@ ALTER TABLE [dbo].[Fato_002] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_002_Dim_Fabrica]...';
+PRINT N'Creating [dbo].[FK_Fato_002_Dim_Fabrica]...';
 
 
 GO
@@ -204,7 +124,7 @@ ALTER TABLE [dbo].[Fato_002] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_002_Dim_Tempo]...';
+PRINT N'Creating [dbo].[FK_Fato_002_Dim_Tempo]...';
 
 
 GO
@@ -213,7 +133,7 @@ ALTER TABLE [dbo].[Fato_002] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_003_Dim_Fabrica]...';
+PRINT N'Creating [dbo].[FK_Fato_003_Dim_Fabrica]...';
 
 
 GO
@@ -222,7 +142,7 @@ ALTER TABLE [dbo].[Fato_003] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_003_Dim_Tempo]...';
+PRINT N'Creating [dbo].[FK_Fato_003_Dim_Tempo]...';
 
 
 GO
@@ -231,7 +151,7 @@ ALTER TABLE [dbo].[Fato_003] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_004_Dim_Cliente]...';
+PRINT N'Creating [dbo].[FK_Fato_004_Dim_Cliente]...';
 
 
 GO
@@ -240,7 +160,7 @@ ALTER TABLE [dbo].[Fato_004] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_004_Dim_Produto]...';
+PRINT N'Creating [dbo].[FK_Fato_004_Dim_Produto]...';
 
 
 GO
@@ -249,7 +169,7 @@ ALTER TABLE [dbo].[Fato_004] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_004_Dim_Organizacional]...';
+PRINT N'Creating [dbo].[FK_Fato_004_Dim_Organizacional]...';
 
 
 GO
@@ -258,7 +178,7 @@ ALTER TABLE [dbo].[Fato_004] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_004_Dim_Tempo]...';
+PRINT N'Creating [dbo].[FK_Fato_004_Dim_Tempo]...';
 
 
 GO
@@ -267,7 +187,7 @@ ALTER TABLE [dbo].[Fato_004] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_005_Dim_Produto]...';
+PRINT N'Creating [dbo].[FK_Fato_005_Dim_Produto]...';
 
 
 GO
@@ -276,7 +196,7 @@ ALTER TABLE [dbo].[Fato_005] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_005_Dim_Fabrica]...';
+PRINT N'Creating [dbo].[FK_Fato_005_Dim_Fabrica]...';
 
 
 GO
@@ -285,26 +205,13 @@ ALTER TABLE [dbo].[Fato_005] WITH NOCHECK
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Fato_005_Dim_Tempo]...';
+PRINT N'Creating [dbo].[FK_Fato_005_Dim_Tempo]...';
 
 
 GO
 ALTER TABLE [dbo].[Fato_005] WITH NOCHECK
     ADD CONSTRAINT [FK_Fato_005_Dim_Tempo] FOREIGN KEY ([Cod_Dia]) REFERENCES [dbo].[Dim_Tempo] ([Cod_Dia]);
 
-
-GO
--- Refactoring step to update target server with deployed transaction logs
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '312519b5-d755-491c-82b8-76d9bcf0a3f8')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('312519b5-d755-491c-82b8-76d9bcf0a3f8')
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'e2d7d7df-489c-4536-a222-90156f5ac10d')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('e2d7d7df-489c-4536-a222-90156f5ac10d')
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '3d965a02-f8d3-4ce7-8a6b-ab05e7c9b859')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('3d965a02-f8d3-4ce7-8a6b-ab05e7c9b859')
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'a05a6b8c-df49-4ac8-b522-8d76e96db7fb')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('a05a6b8c-df49-4ac8-b522-8d76e96db7fb')
-
-GO
 
 GO
 PRINT N'Checking existing data against newly created constraints';
@@ -315,16 +222,6 @@ USE [$(DatabaseName)];
 
 
 GO
-ALTER TABLE [dbo].[Fato_001] WITH CHECK CHECK CONSTRAINT [FK_Fato_001_Dim_Cliente];
-
-ALTER TABLE [dbo].[Fato_001] WITH CHECK CHECK CONSTRAINT [FK_Fato_001_Dim_Produto];
-
-ALTER TABLE [dbo].[Fato_001] WITH CHECK CHECK CONSTRAINT [FK_Fato_001_Dim_Organizacional];
-
-ALTER TABLE [dbo].[Fato_001] WITH CHECK CHECK CONSTRAINT [FK_Fato_001_Dim_Fabrica];
-
-ALTER TABLE [dbo].[Fato_001] WITH CHECK CHECK CONSTRAINT [FK_Fato_001_Dim_Tempo];
-
 ALTER TABLE [dbo].[Fato_002] WITH CHECK CHECK CONSTRAINT [FK_Fato_002_Dim_Cliente];
 
 ALTER TABLE [dbo].[Fato_002] WITH CHECK CHECK CONSTRAINT [FK_Fato_002_Dim_Produto];

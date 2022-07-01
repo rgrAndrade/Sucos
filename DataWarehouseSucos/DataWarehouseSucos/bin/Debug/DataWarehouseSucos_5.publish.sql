@@ -40,48 +40,112 @@ USE [$(DatabaseName)];
 
 
 GO
-PRINT N'Rename refactoring operation with key 8f8c27e7-1295-4b48-bfe8-58deb574e4b3 is skipped, element [dbo].[Dim_Tempo].[Id] (SqlSimpleColumn) will not be renamed to Cod_Dia';
+PRINT N'Rename refactoring operation with key c4c4409d-eb20-4053-b592-25362a422a3b is skipped, element [dbo].[Fato_001].[Id] (SqlSimpleColumn) will not be renamed to Cod_Cliente';
 
 
 GO
-PRINT N'Rename refactoring operation with key 72abff2e-c70b-4efa-88c0-4aa0ab8fcba6 is skipped, element [dbo].[Dim_Tempo].[Cod_] (SqlSimpleColumn) will not be renamed to Cod_Semana';
+PRINT N'Rename refactoring operation with key e05d7d5e-5733-47e8-a765-be25cd539653 is skipped, element [dbo].[Fato_001].[Cof_Produto] (SqlSimpleColumn) will not be renamed to Cod_Produto';
 
 
 GO
-PRINT N'Creating Table [dbo].[Dim_Tempo]...';
+PRINT N'Rename refactoring operation with key 9165d78b-516b-48b4-bc6a-474233865d2f is skipped, element [dbo].[Fato_001].[Cod_dia] (SqlSimpleColumn) will not be renamed to Cod_Dia';
 
 
 GO
-CREATE TABLE [dbo].[Dim_Tempo] (
+PRINT N'Creating [dbo].[Fato_001]...';
+
+
+GO
+CREATE TABLE [dbo].[Fato_001] (
+    [Cod_Cliente]        NVARCHAR (50) NOT NULL,
+    [Cod_Produto]        NVARCHAR (50) NOT NULL,
+    [Cod_Organizacional] NVARCHAR (50) NOT NULL,
+    [Cod_Fabrica]        NVARCHAR (50) NOT NULL,
     [Cod_Dia]            NVARCHAR (50) NOT NULL,
-    [Data]               DATE          NULL,
-    [Cod_Semana]         INT           NULL,
-    [Nome_Dia_Semana]    NVARCHAR (50) NULL,
-    [Cod_Mes]            INT           NULL,
-    [Nome_Mes]           NVARCHAR (50) NULL,
-    [Cod_Mes_Ano]        NVARCHAR (50) NULL,
-    [Cod_Trimestre]      INT           NULL,
-    [Nome_Trimestre]     NVARCHAR (50) NULL,
-    [Cod_Trimestre_Ano]  NVARCHAR (50) NULL,
-    [Nome_Trimestre_Ano] NVARCHAR (50) NULL,
-    [Cod_Semestre]       INT           NULL,
-    [ Nome_Semestre]     NVARCHAR (50) NULL,
-    [Cod_Semestre_Ano]   NVARCHAR (50) NULL,
-    [Nome_Semestre_Ano]  NVARCHAR (50) NULL,
-    [Ano]                NVARCHAR (50) NULL,
-    [Tipo_Dia]           NVARCHAR (50) NULL,
-    PRIMARY KEY CLUSTERED ([Cod_Dia] ASC)
+    [Faturamento]        FLOAT (53)    NULL,
+    [Imposto]            FLOAT (53)    NULL,
+    [Custo_Variavel]     FLOAT (53)    NULL,
+    [Quantidade_Vendida] FLOAT (53)    NULL,
+    [Unidade_Vendida]    FLOAT (53)    NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC, [Cod_Produto] ASC, [Cod_Organizacional] ASC, [Cod_Fabrica] ASC, [Cod_Dia] ASC)
 );
 
 
 GO
--- Refactoring step to update target server with deployed transaction logs
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '8f8c27e7-1295-4b48-bfe8-58deb574e4b3')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('8f8c27e7-1295-4b48-bfe8-58deb574e4b3')
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '72abff2e-c70b-4efa-88c0-4aa0ab8fcba6')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('72abff2e-c70b-4efa-88c0-4aa0ab8fcba6')
+PRINT N'Creating [dbo].[FK_Fato_001_Dim_Cliente]...';
+
 
 GO
+ALTER TABLE [dbo].[Fato_001] WITH NOCHECK
+    ADD CONSTRAINT [FK_Fato_001_Dim_Cliente] FOREIGN KEY ([Cod_Cliente]) REFERENCES [dbo].[Dim_Cliente] ([Cod_Cliente]);
+
+
+GO
+PRINT N'Creating [dbo].[FK_Fato_001_Dim_Produto]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_001] WITH NOCHECK
+    ADD CONSTRAINT [FK_Fato_001_Dim_Produto] FOREIGN KEY ([Cod_Produto]) REFERENCES [dbo].[Dim_Produto] ([Cod_Produto]);
+
+
+GO
+PRINT N'Creating [dbo].[FK_Fato_001_Dim_Organizacional]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_001] WITH NOCHECK
+    ADD CONSTRAINT [FK_Fato_001_Dim_Organizacional] FOREIGN KEY ([Cod_Organizacional]) REFERENCES [dbo].[Dim_Organizacional] ([Cod_Filho]);
+
+
+GO
+PRINT N'Creating [dbo].[FK_Fato_001_Dim_Fabrica]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_001] WITH NOCHECK
+    ADD CONSTRAINT [FK_Fato_001_Dim_Fabrica] FOREIGN KEY ([Cod_Fabrica]) REFERENCES [dbo].[Dim_Fabrica] ([Cod_Fabrica]);
+
+
+GO
+PRINT N'Creating [dbo].[FK_Fato_001_Dim_Tempo]...';
+
+
+GO
+ALTER TABLE [dbo].[Fato_001] WITH NOCHECK
+    ADD CONSTRAINT [FK_Fato_001_Dim_Tempo] FOREIGN KEY ([Cod_Dia]) REFERENCES [dbo].[Dim_Tempo] ([Cod_Dia]);
+
+
+GO
+-- Refactoring step to update target server with deployed transaction logs
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'c4c4409d-eb20-4053-b592-25362a422a3b')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('c4c4409d-eb20-4053-b592-25362a422a3b')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'e05d7d5e-5733-47e8-a765-be25cd539653')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('e05d7d5e-5733-47e8-a765-be25cd539653')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '9165d78b-516b-48b4-bc6a-474233865d2f')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('9165d78b-516b-48b4-bc6a-474233865d2f')
+
+GO
+
+GO
+PRINT N'Checking existing data against newly created constraints';
+
+
+GO
+USE [$(DatabaseName)];
+
+
+GO
+ALTER TABLE [dbo].[Fato_001] WITH CHECK CHECK CONSTRAINT [FK_Fato_001_Dim_Cliente];
+
+ALTER TABLE [dbo].[Fato_001] WITH CHECK CHECK CONSTRAINT [FK_Fato_001_Dim_Produto];
+
+ALTER TABLE [dbo].[Fato_001] WITH CHECK CHECK CONSTRAINT [FK_Fato_001_Dim_Organizacional];
+
+ALTER TABLE [dbo].[Fato_001] WITH CHECK CHECK CONSTRAINT [FK_Fato_001_Dim_Fabrica];
+
+ALTER TABLE [dbo].[Fato_001] WITH CHECK CHECK CONSTRAINT [FK_Fato_001_Dim_Tempo];
+
 
 GO
 PRINT N'Update complete.';

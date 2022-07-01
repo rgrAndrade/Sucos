@@ -40,65 +40,58 @@ USE [$(DatabaseName)];
 
 
 GO
-PRINT N'Rename refactoring operation with key 022444ec-b04f-47e5-a171-4ce8e8f5d524 is skipped, element [dbo].[Dim_Marca].[Id] (SqlSimpleColumn) will not be renamed to Cod_Marca';
+PRINT N'Rename refactoring operation with key 81ca6fd4-27d1-4b2f-8b39-207696ea5e18 is skipped, element [dbo].[Dim_Organizacional].[Id] (SqlSimpleColumn) will not be renamed to Cod_Filho';
 
 
 GO
-PRINT N'Rename refactoring operation with key 71a2331e-bbec-4840-8676-47ec2e411a25 is skipped, element [dbo].[Dim_Produto].[Id] (SqlSimpleColumn) will not be renamed to Cod_Produto';
+PRINT N'Creating [dbo].[Dim_Organizacional]...';
 
 
 GO
-PRINT N'Creating Table [dbo].[Dim_Marca]...';
-
-
-GO
-CREATE TABLE [dbo].[Dim_Marca] (
-    [Cod_Marca]     NVARCHAR (50)  NOT NULL,
-    [Desc_Marca]    NVARCHAR (200) NULL,
-    [Cod_Categoria] NVARCHAR (50)  NULL,
-    PRIMARY KEY CLUSTERED ([Cod_Marca] ASC)
+CREATE TABLE [dbo].[Dim_Organizacional] (
+    [Cod_Filho]  NVARCHAR (50)  NOT NULL,
+    [Desc_Filho] NVARCHAR (200) NULL,
+    [Cod_Pai]    NVARCHAR (50)  NULL,
+    [Esquerda]   INT            NULL,
+    [Direita]    INT            NULL,
+    [Nivel]      INT            NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Filho] ASC)
 );
 
 
 GO
-PRINT N'Creating Table [dbo].[Dim_Produto]...';
+PRINT N'Creating [dbo].[Table1]...';
 
 
 GO
-CREATE TABLE [dbo].[Dim_Produto] (
-    [Cod_Produto]  NVARCHAR (50)  NOT NULL,
-    [Desc_Produto] NVARCHAR (200) NULL,
-    [Atr_Tamanho]  NVARCHAR (200) NULL,
-    [Atr_Sabor]    NVARCHAR (200) NULL,
-    [Cod_Marca]    NVARCHAR (50)  NULL,
-    PRIMARY KEY CLUSTERED ([Cod_Produto] ASC)
+CREATE TABLE [dbo].[Table1] (
+    [Cod_Cliente]   NVARCHAR (50)  NOT NULL,
+    [Desc_Cliente]  NVARCHAR (200) NULL,
+    [Cod_Cidade]    NVARCHAR (50)  NULL,
+    [Desc_Cidade]   NVARCHAR (200) NULL,
+    [Cod_Estado]    NVARCHAR (50)  NULL,
+    [Desc_Estado]   NVARCHAR (200) NULL,
+    [Cod_Regiao]    NVARCHAR (50)  NULL,
+    [Desc_Regiao]   NVARCHAR (200) NULL,
+    [Cod_Segmento]  NVARCHAR (50)  NULL,
+    [Desc_Segmento] NVARCHAR (200) NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC)
 );
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Dim_Marca_Dim_Categoria]...';
+PRINT N'Creating [dbo].[FK_Dim_Organizacional_Dim_Organizacional]...';
 
 
 GO
-ALTER TABLE [dbo].[Dim_Marca] WITH NOCHECK
-    ADD CONSTRAINT [FK_Dim_Marca_Dim_Categoria] FOREIGN KEY ([Cod_Categoria]) REFERENCES [dbo].[Dim_Categoria] ([Cod_Categoria]);
-
-
-GO
-PRINT N'Creating Foreign Key [dbo].[FK_Dim_Produto_Dim_Marca]...';
-
-
-GO
-ALTER TABLE [dbo].[Dim_Produto] WITH NOCHECK
-    ADD CONSTRAINT [FK_Dim_Produto_Dim_Marca] FOREIGN KEY ([Cod_Marca]) REFERENCES [dbo].[Dim_Marca] ([Cod_Marca]);
+ALTER TABLE [dbo].[Dim_Organizacional] WITH NOCHECK
+    ADD CONSTRAINT [FK_Dim_Organizacional_Dim_Organizacional] FOREIGN KEY ([Cod_Pai]) REFERENCES [dbo].[Dim_Organizacional] ([Cod_Filho]);
 
 
 GO
 -- Refactoring step to update target server with deployed transaction logs
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '022444ec-b04f-47e5-a171-4ce8e8f5d524')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('022444ec-b04f-47e5-a171-4ce8e8f5d524')
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '71a2331e-bbec-4840-8676-47ec2e411a25')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('71a2331e-bbec-4840-8676-47ec2e411a25')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '81ca6fd4-27d1-4b2f-8b39-207696ea5e18')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('81ca6fd4-27d1-4b2f-8b39-207696ea5e18')
 
 GO
 
@@ -111,9 +104,7 @@ USE [$(DatabaseName)];
 
 
 GO
-ALTER TABLE [dbo].[Dim_Marca] WITH CHECK CHECK CONSTRAINT [FK_Dim_Marca_Dim_Categoria];
-
-ALTER TABLE [dbo].[Dim_Produto] WITH CHECK CHECK CONSTRAINT [FK_Dim_Produto_Dim_Marca];
+ALTER TABLE [dbo].[Dim_Organizacional] WITH CHECK CHECK CONSTRAINT [FK_Dim_Organizacional_Dim_Organizacional];
 
 
 GO

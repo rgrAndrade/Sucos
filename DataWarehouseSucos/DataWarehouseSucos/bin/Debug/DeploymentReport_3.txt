@@ -10,9 +10,8 @@
 
 ** User actions
      Create
-       [dbo].[Dim_Marca] (Table)
-       [dbo].[Dim_Produto] (Table)
-       [dbo].[FK_Dim_Marca_Dim_Categoria] (Foreign Key)
-       [dbo].[FK_Dim_Produto_Dim_Marca] (Foreign Key)
+       [dbo].[Dim_Organizacional] (Table)
+       [dbo].[Table1] (Table)
+       [dbo].[FK_Dim_Organizacional_Dim_Organizacional] (Foreign Key)
 
 ** Supporting actions

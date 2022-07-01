@@ -40,15 +40,23 @@ USE [$(DatabaseName)];
 
 
 GO
-PRINT N'Rename refactoring operation with key f0e70bd5-365e-4bd2-ac69-5c6e7123b0da is skipped, element [dbo].[Dim_Cliente].[Id] (SqlSimpleColumn) will not be renamed to Cod_Cliente';
+PRINT N'Rename refactoring operation with key 03ea1617-be7b-4609-9fec-d2f8c5a58b56, ef6c5a09-de63-49bb-8f73-217bfd115bb8, 2249b96f-f669-4065-8c63-f5198a0a7706 is skipped, element [dbo].[Table1].[Id] (SqlSimpleColumn) will not be renamed to Cod_Cliente';
 
 
 GO
-PRINT N'Creating Table [dbo].[Dim_Cliente]...';
+PRINT N'Rename refactoring operation with key ca34e4f4-3e53-40cc-8031-53998f2c545e is skipped, element [dbo].[Table1].[Desc_liente] (SqlSimpleColumn) will not be renamed to Desc_Cliente';
 
 
 GO
-CREATE TABLE [dbo].[Dim_Cliente] (
+PRINT N'Rename refactoring operation with key f2821630-0e70-485f-aabf-66c5707a97c1 is skipped, element [dbo].[Table1].[Desc_C] (SqlSimpleColumn) will not be renamed to Desc_Estado';
+
+
+GO
+PRINT N'Creating [dbo].[Table1]...';
+
+
+GO
+CREATE TABLE [dbo].[Table1] (
     [Cod_Cliente]   NVARCHAR (50)  NOT NULL,
     [Desc_Cliente]  NVARCHAR (200) NULL,
     [Cod_Cidade]    NVARCHAR (50)  NULL,
@@ -57,7 +65,7 @@ CREATE TABLE [dbo].[Dim_Cliente] (
     [Desc_Estado]   NVARCHAR (200) NULL,
     [Cod_Regiao]    NVARCHAR (50)  NULL,
     [Desc_Regiao]   NVARCHAR (200) NULL,
-    [Cod_Segmente]  NVARCHAR (50)  NULL,
+    [Cod_Segmento]  NVARCHAR (50)  NULL,
     [Desc_Segmento] NVARCHAR (200) NULL,
     PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC)
 );
@@ -65,8 +73,16 @@ CREATE TABLE [dbo].[Dim_Cliente] (
 
 GO
 -- Refactoring step to update target server with deployed transaction logs
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'f0e70bd5-365e-4bd2-ac69-5c6e7123b0da')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('f0e70bd5-365e-4bd2-ac69-5c6e7123b0da')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '03ea1617-be7b-4609-9fec-d2f8c5a58b56')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('03ea1617-be7b-4609-9fec-d2f8c5a58b56')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'ef6c5a09-de63-49bb-8f73-217bfd115bb8')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('ef6c5a09-de63-49bb-8f73-217bfd115bb8')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '2249b96f-f669-4065-8c63-f5198a0a7706')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('2249b96f-f669-4065-8c63-f5198a0a7706')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'ca34e4f4-3e53-40cc-8031-53998f2c545e')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('ca34e4f4-3e53-40cc-8031-53998f2c545e')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'f2821630-0e70-485f-aabf-66c5707a97c1')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('f2821630-0e70-485f-aabf-66c5707a97c1')
 
 GO
 

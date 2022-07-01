@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>DataWarehouseSucos</Name>
+    <Name>DatawarehouseSucos</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{728237f8-d933-41a4-8129-1fad2cf928eb}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <ProjectGuid>{96d6e90c-d756-4738-9742-ac640ff70e66}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>DataWarehouseSucos</RootNamespace>
-    <AssemblyName>DataWarehouseSucos</AssemblyName>
+    <RootNamespace>DatawarehouseSucos</RootNamespace>
+    <AssemblyName>DatawarehouseSucos</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -23,6 +23,7 @@
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <GenerateCreateScript>True</GenerateCreateScript>
+    <PermissionSet>UNSAFE</PermissionSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -57,23 +58,23 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="tabelas" />
+    <Folder Include="Tabelas" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="tabelas\Dim_Fabrica.sql" />
-    <Build Include="tabelas\Dim_Cliente.sql" />
-    <Build Include="tabelas\Dim_Categoria.sql" />
-    <Build Include="tabelas\Dim_Marca.sql" />
-    <Build Include="tabelas\Dim_Produto.sql" />
-    <Build Include="tabelas\Dim_Organizacional.sql" />
-    <Build Include="tabelas\Dim_Tempo.sql" />
-    <Build Include="tabelas\Fato_001.sql" />
-    <Build Include="tabelas\Fato_002.sql" />
-    <Build Include="tabelas\Fato_003.sql" />
-    <Build Include="tabelas\Fato_004.sql" />
-    <Build Include="tabelas\Fato_005.sql" />
+    <Build Include="Tabelas\Dim_Fabrica.sql" />
+    <Build Include="Tabelas\Dim_Cliente.sql" />
+    <Build Include="Tabelas\Dim_Categoria.sql" />
+    <Build Include="Tabelas\Dim_Marca.sql" />
+    <Build Include="Tabelas\Dim_Produto.sql" />
+    <Build Include="Tabelas\Dim_Organizacional.sql" />
+    <Build Include="Tabelas\Dim_Tempo.sql" />
+    <Build Include="Tabelas\Fato_001.sql" />
+    <Build Include="Tabelas\Fato_002.sql" />
+    <Build Include="Tabelas\Fato_003.sql" />
+    <Build Include="Tabelas\Fato_004.sql" />
+    <Build Include="Tabelas\Fato_005.sql" />
   </ItemGroup>
   <ItemGroup>
-    <RefactorLog Include="DataWarehouseSucos.refactorlog" />
+    <RefactorLog Include="DatawarehouseSucos.refactorlog" />
   </ItemGroup>
 </Project>

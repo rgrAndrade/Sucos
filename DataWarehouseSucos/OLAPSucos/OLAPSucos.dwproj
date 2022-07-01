@@ -6,16 +6,6 @@
     <Name>OLAPSucos.database</Name>
     <FullPath>OLAPSucos.database</FullPath>
   </Database>
-  <Dimensions>
-    <ProjectItem>
-      <Name>Fabrica.dim</Name>
-      <FullPath>Fabrica.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Cliente.dim</Name>
-      <FullPath>Cliente.dim</FullPath>
-    </ProjectItem>
-  </Dimensions>
   <DataSources>
     <ProjectItem>
       <Name>DW SUCOS.ds</Name>

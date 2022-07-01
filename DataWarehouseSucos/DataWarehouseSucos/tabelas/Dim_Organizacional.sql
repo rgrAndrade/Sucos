@@ -6,5 +6,5 @@
     [Esquerda] INT NULL, 
     [Direita] INT NULL, 
     [Nivel] INT NULL, 
-    CONSTRAINT [FK_Dim_Organizacional_Dim_organizacional] FOREIGN KEY ([Cod_Pai]) REFERENCES [Dim_Organizacional]([Cod_Filho])
+    CONSTRAINT [FK_Dim_Organizacional_Dim_Organizacional] FOREIGN KEY ([Cod_Pai]) REFERENCES [Dim_Organizacional]([Cod_Filho])
 )

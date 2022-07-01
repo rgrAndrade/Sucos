@@ -5,4 +5,5 @@
     [Atr_Tamanho] NVARCHAR(200) NULL, 
     [Atr_Sabor] NVARCHAR(200) NULL, 
     [Cod_Marca] NVARCHAR(50) NULL, 
-    CONSTRAINT [FK_Dim_Produto_Dim_Marca] FOREIGN KEY ([Cod_Marca]) REFERENCES [Dim_Marca]([Cod_Marca]) )
+    CONSTRAINT [FK_Dim_Produto_Dim_Marca] FOREIGN KEY ([Cod_Marca]) REFERENCES [Dim_Marca]([Cod_Marca])
+)

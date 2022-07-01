@@ -1,5 +1,7 @@
-DataWarehouseSucos.dbmdl
+DatawarehouseSucos.dbmdl
 
-DataWarehouseSucos.jfm
+DatawarehouseSucos.jfm
 
-CargaDatawarehouse.ispac
+DatawarehouseSucos.refactorlog
+
+CargaDatawarehouse.dtproj

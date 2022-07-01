@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="6/27/2022 7:12:45 PM"
+  DTS:CreationDate="4/13/2020 9:45:42 PM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="DESKTOP-JH59P0B"
-  DTS:CreatorName="DESKTOP-JH59P0B\rgrso"
-  DTS:DTSID="{B492858A-C0A1-40FF-A7A9-C6F0989F89E8}"
+  DTS:CreatorComputerName="GABRIELA"
+  DTS:CreatorName="GABRIELA\maria"
+  DTS:DTSID="{278430FA-1349-4EBF-A598-8ED5B9CD62F4}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1046"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{5B4CE79A-8684-43A7-AF5D-BE340AAB66B7}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{F80BC0B5-CF29-44F7-928B-66173F4C5E44}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:PackageParameters>
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{06EA14AD-F199-4904-AAE8-7117165FB826}"
+      DTS:DTSID="{AE98A7A4-553F-4EE3-9035-1EC1AB554FE6}"
       DTS:ObjectName="Ano_Final">
       <DTS:Property
         DTS:DataType="8"
@@ -28,7 +28,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{B7FBE71D-4DD1-4FC6-A16F-D2B06AAF7315}"
+      DTS:DTSID="{EE0DCA12-CABA-4858-A07B-AE23B91FADA7}"
       DTS:ObjectName="Ano_Inicial">
       <DTS:Property
         DTS:DataType="8"
@@ -37,7 +37,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{07EB3319-773C-4882-9C49-FD0093E80D6D}"
+      DTS:DTSID="{5803F4C9-5DA2-4D9B-BC4A-68DB45640C3A}"
       DTS:ObjectName="Mes_Final">
       <DTS:Property
         DTS:DataType="8"
@@ -46,7 +46,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{7CD5F28F-56A5-4229-A2D9-E944B85223A0}"
+      DTS:DTSID="{1436ED3D-84B9-4562-8F10-572086509598}"
       DTS:ObjectName="Mes_Inicial">
       <DTS:Property
         DTS:DataType="8"
@@ -56,26 +56,26 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\CargaDimensoes"
+      DTS:refId="Package\Carga Dimensões"
       DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="CargaDimensoes"
-      DTS:DTSID="{7EA34011-9442-4402-9A58-B825874D6514}"
+      DTS:Description="Carga Dimensões"
+      DTS:DTSID="{C2405427-7F00-45F4-9330-36FE82596A16}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="CargaDimensoes"
+      DTS:ObjectName="Carga Dimensões"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>CargaDimensoes.dtsx</PackageName>
+          <PackageName>CargaDimensões.dtsx</PackageName>
           <ParameterAssignment>
             <ParameterName>Ano_Final</ParameterName>
             <BindedVariableOrParameterName>$Package::Ano_Final</BindedVariableOrParameterName>
           </ParameterAssignment>
           <ParameterAssignment>
             <ParameterName>Ano_Inicial</ParameterName>
-            <BindedVariableOrParameterName>$Package::Ano_Final</BindedVariableOrParameterName>
+            <BindedVariableOrParameterName>$Package::Ano_Inicial</BindedVariableOrParameterName>
           </ParameterAssignment>
           <ParameterAssignment>
             <ParameterName>Mes_Final</ParameterName>
@@ -89,13 +89,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\CargaFatos"
+      DTS:refId="Package\Carga Fatos"
       DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="CargaFatos"
-      DTS:DTSID="{6BBA4BDB-172A-4B11-A459-D9710B1D09F3}"
+      DTS:Description="Carga Fatos"
+      DTS:DTSID="{64D628E4-A5B3-41F8-83F2-CDED66B727BA}"
       DTS:ExecutableType="Microsoft.ExecutePackageTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="CargaFatos"
+      DTS:ObjectName="Carga Fatos"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -126,11 +126,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Restrição]"
       DTS:CreationName=""
-      DTS:DTSID="{CE43F328-95E3-49F3-A463-A4BB29EB7320}"
-      DTS:From="Package\CargaDimensoes"
+      DTS:DTSID="{77307D7F-7A0B-4BEF-BB22-E7ABCE368BE7}"
+      DTS:From="Package\Carga Dimensões"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Restrição"
-      DTS:To="Package\CargaFatos" />
+      DTS:To="Package\Carga Fatos" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
@@ -146,26 +146,38 @@
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="188,42"
-          Id="Package\CargaDimensoes"
-          TopLeft="15,20" />
+          Id="Package\Carga Dimensões"
+          TopLeft="84,40" />
         <NodeLayout
-          Size="132,42"
-          Id="Package\CargaFatos"
-          TopLeft="48.5,111.5" />
+          Size="188,42"
+          Id="Package\Carga Fatos"
+          TopLeft="198,141" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restrição]"
-          TopLeft="111.75,62">
+          TopLeft="178,82">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.5"
+              EndConnector="114,59"
               Start="0,0"
-              End="0,42">
+              End="114,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42" />
+                    End="0,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="4,29.5" />
+                  <mssgle:LineSegment
+                    End="110,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110,29.5"
+                    Point2="114,29.5"
+                    Point3="114,33.5" />
+                  <mssgle:LineSegment
+                    End="114,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

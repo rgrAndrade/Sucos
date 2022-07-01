@@ -86,11 +86,11 @@ IF EXISTS (SELECT 1
 
 
 GO
-PRINT N'Rename refactoring operation with key 2f719717-cce3-4a4a-b839-8f4ee6b51dae is skipped, element [dbo].[Dim_Fabrica].[Id] (SqlSimpleColumn) will not be renamed to Cod_Fabrica';
+PRINT N'Rename refactoring operation with key dbd1b680-d352-4198-8b29-bfc72c310807 is skipped, element [dbo].[Dim_Fabrica].[Id] (SqlSimpleColumn) will not be renamed to Cod_Fabrica';
 
 
 GO
-PRINT N'Creating Table [dbo].[Dim_Fabrica]...';
+PRINT N'Creating [dbo].[Dim_Fabrica]...';
 
 
 GO
@@ -110,8 +110,8 @@ BEGIN
     EXEC sp_addextendedproperty N'microsoft_database_tools_support', N'refactoring log', N'schema', N'dbo', N'table', N'__RefactorLog'
 END
 GO
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '2f719717-cce3-4a4a-b839-8f4ee6b51dae')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('2f719717-cce3-4a4a-b839-8f4ee6b51dae')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'dbd1b680-d352-4198-8b29-bfc72c310807')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('dbd1b680-d352-4198-8b29-bfc72c310807')
 
 GO
 

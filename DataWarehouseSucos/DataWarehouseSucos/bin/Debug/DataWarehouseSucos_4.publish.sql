@@ -40,58 +40,75 @@ USE [$(DatabaseName)];
 
 
 GO
-PRINT N'Rename refactoring operation with key b80ae333-cda4-4a37-bd5f-53911c3529c1 is skipped, element [dbo].[Dim_Organizacional].[Id] (SqlSimpleColumn) will not be renamed to Cod_Filho';
+PRINT N'Rename refactoring operation with key 76a65384-eaa4-4d42-a6d3-3d87e3dfa5cc is skipped, element [dbo].[Dim_Tempo].[Id] (SqlSimpleColumn) will not be renamed to Cod_Dia';
 
 
 GO
-PRINT N'Rename refactoring operation with key 9ba4046f-3ed5-4a6f-95d6-7260906c6c23 is skipped, element [dbo].[FK_Dim_Organizacional_Dim] (SqlForeignKeyConstraint) will not be renamed to [FK_Dim_Organizacional_Dim_organizacional]';
+PRINT N'Rename refactoring operation with key 4803e471-f1e9-4146-af40-c8823542e43c is skipped, element [dbo].[Dim_Tempo].[Nome_Trismestre] (SqlSimpleColumn) will not be renamed to Nome_Trimestre';
 
 
 GO
-PRINT N'Creating Table [dbo].[Dim_Organizacional]...';
+PRINT N'Rename refactoring operation with key c545b892-13dc-485f-a6a0-74dfca462781 is skipped, element [dbo].[Dim_Tempo].[E_Dia_Semana] (SqlSimpleColumn) will not be renamed to Tipo_Dia';
 
 
 GO
-CREATE TABLE [dbo].[Dim_Organizacional] (
-    [Cod_Filho]  NVARCHAR (50)  NOT NULL,
-    [Desc_Filho] NVARCHAR (200) NULL,
-    [Cod_Pai]    NVARCHAR (50)  NULL,
-    [Esquerda]   INT            NULL,
-    [Direita]    INT            NULL,
-    [Nivel]      INT            NULL,
-    PRIMARY KEY CLUSTERED ([Cod_Filho] ASC)
+PRINT N'Creating [dbo].[Dim_Tempo]...';
+
+
+GO
+CREATE TABLE [dbo].[Dim_Tempo] (
+    [Cod_Dia]            NVARCHAR (50) NOT NULL,
+    [Data]               DATE          NULL,
+    [Cod_Semana]         INT           NULL,
+    [Nome_Dia_Semana]    NVARCHAR (50) NULL,
+    [Cod_Mes]            INT           NULL,
+    [Nome_Mes]           NVARCHAR (50) NULL,
+    [Cod_Mes_Ano]        NVARCHAR (50) NULL,
+    [Nome_Mes_Ano]       NVARCHAR (50) NULL,
+    [Cod_Trimestre]      INT           NULL,
+    [Nome_Trimestre]     NVARCHAR (50) NULL,
+    [Cod_Trimestre_Ano]  NVARCHAR (50) NULL,
+    [Nome_Trimestre_Ano] NVARCHAR (50) NULL,
+    [Cod_Semestre]       INT           NULL,
+    [Nome_Semestre]      NVARCHAR (50) NULL,
+    [Cod_Semestre_Ano]   NVARCHAR (50) NULL,
+    [Nome_Semestre_Ano]  NVARCHAR (50) NULL,
+    [Ano]                NVARCHAR (50) NULL,
+    [Tipo_Dia]           NVARCHAR (50) NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Dia] ASC)
 );
 
 
 GO
-PRINT N'Creating Foreign Key [dbo].[FK_Dim_Organizacional_Dim_organizacional]...';
+PRINT N'Creating [dbo].[Table1]...';
 
 
 GO
-ALTER TABLE [dbo].[Dim_Organizacional] WITH NOCHECK
-    ADD CONSTRAINT [FK_Dim_Organizacional_Dim_organizacional] FOREIGN KEY ([Cod_Pai]) REFERENCES [dbo].[Dim_Organizacional] ([Cod_Filho]);
+CREATE TABLE [dbo].[Table1] (
+    [Cod_Cliente]   NVARCHAR (50)  NOT NULL,
+    [Desc_Cliente]  NVARCHAR (200) NULL,
+    [Cod_Cidade]    NVARCHAR (50)  NULL,
+    [Desc_Cidade]   NVARCHAR (200) NULL,
+    [Cod_Estado]    NVARCHAR (50)  NULL,
+    [Desc_Estado]   NVARCHAR (200) NULL,
+    [Cod_Regiao]    NVARCHAR (50)  NULL,
+    [Desc_Regiao]   NVARCHAR (200) NULL,
+    [Cod_Segmento]  NVARCHAR (50)  NULL,
+    [Desc_Segmento] NVARCHAR (200) NULL,
+    PRIMARY KEY CLUSTERED ([Cod_Cliente] ASC)
+);
 
 
 GO
 -- Refactoring step to update target server with deployed transaction logs
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'b80ae333-cda4-4a37-bd5f-53911c3529c1')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('b80ae333-cda4-4a37-bd5f-53911c3529c1')
-IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '9ba4046f-3ed5-4a6f-95d6-7260906c6c23')
-INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('9ba4046f-3ed5-4a6f-95d6-7260906c6c23')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '76a65384-eaa4-4d42-a6d3-3d87e3dfa5cc')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('76a65384-eaa4-4d42-a6d3-3d87e3dfa5cc')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = '4803e471-f1e9-4146-af40-c8823542e43c')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('4803e471-f1e9-4146-af40-c8823542e43c')
+IF NOT EXISTS (SELECT OperationKey FROM [dbo].[__RefactorLog] WHERE OperationKey = 'c545b892-13dc-485f-a6a0-74dfca462781')
+INSERT INTO [dbo].[__RefactorLog] (OperationKey) values ('c545b892-13dc-485f-a6a0-74dfca462781')
 
 GO
-
-GO
-PRINT N'Checking existing data against newly created constraints';
-
-
-GO
-USE [$(DatabaseName)];
-
-
-GO
-ALTER TABLE [dbo].[Dim_Organizacional] WITH CHECK CHECK CONSTRAINT [FK_Dim_Organizacional_Dim_organizacional];
-
 
 GO
 PRINT N'Update complete.';
