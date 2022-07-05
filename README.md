@@ -12,7 +12,7 @@
   <p> 2. Criação das Tabelas de Dimensões e de Fatos do Datawarehouse - Completo</p>
   <p> 3. Processo de ETL das Tabelas de Dimensões e Fatos - Completo</p>
   <p> 4.  Criação dos OLAPs em - Completo </p>
-  <p> 5. Criação do Relatórios utilizando o Power BI - Completo</p>
+  <p> 5. Criação de Relatórios utilizando o Power BI - Completo</p>
 - Funcionalidades e Demonstração da Aplicação;
 - Acesso ao Projeto;
 - Tecnologias utilizadas;
