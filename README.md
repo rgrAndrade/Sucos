@@ -14,7 +14,6 @@
   <p> 4.  Criação dos OLAPs em - Completo </p>
   <p> 5. Criação de Relatórios utilizando o Power BI - Completo</p>
 - Funcionalidades e Demonstração da Aplicação;
-- Acesso ao Projeto;
   <p>Conheça uma dos Relório desse   <a href="https://app.powerbi.com/view?r=eyJrIjoiNWNlZTg4NWEtM2JhZi00Mjk1LWJjMzQtMTVjZjQ5NzJkMmVmIiwidCI6Ijk4ZDhhMWEyLWMzYWUtNGFlMi05ZTIxLTFjYTVhOTEyNzRjZSJ9">projeto</a> </p>
 - Tecnologias utilizadas;
   <p> 1. Microsoft SQL Server 2019</p>
