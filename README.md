@@ -27,3 +27,4 @@
 - Pessoas Desenvolvedoras do Projeto;
   >Rogério Andrade
 - Licença
+  >v1.0.0
